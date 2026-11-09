@@ -49,12 +49,14 @@ app.post("/api/avaliacoes", async (req, res) => {
   try {
     if (!process.env.DATABASE_URL) return res.status(503).json({ error: "Banco de dados ainda não configurado." });
     const { turma, nome, respostas } = req.body || {};
-    if (!turma || typeof turma !== "string" || !respostas || typeof respostas !== "object") {
-      return res.status(400).json({ error: "Informe a turma e responda à avaliação." });
+    const turmaValida = typeof turma === "string" && ["3A", "3B"].includes(turma.trim());
+    const nomeValido = typeof nome === "string" && nome.trim().length >= 3;
+    if (!turmaValida || !nomeValido || !respostas || typeof respostas !== "object" || Array.isArray(respostas)) {
+      return res.status(400).json({ error: "Informe seu nome completo, selecione 3A ou 3B e responda à avaliação." });
     }
     await pool.query(
       "INSERT INTO avaliacoes (turma, nome, respostas) VALUES ($1, $2, $3)",
-      [turma.trim().slice(0, 40), typeof nome === "string" ? nome.trim().slice(0, 100) : null, respostas]
+      [turma.trim(), nome.trim().slice(0, 100), respostas]
     );
     res.status(201).json({ message: "Avaliação registrada com sucesso." });
   } catch (error) {
