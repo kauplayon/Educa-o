@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142d4e">
+  <meta name="description" content="Autoavaliação do Aulão de Linguagens.">
+  <title>Autoavaliação | Aulão de Linguagens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Aulão de Linguagens - início">
+      <span class="brand-mark">AL</span>
+      <span><strong>Aulão de Linguagens</strong><small>Autoavaliação do estudante</small></span>
+    </a>
+    <span class="top-tag">3ª série · Ensino Médio</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">SUA APRENDIZAGEM EM FOCO</span>
+        <h1>O que você aprendeu<br><em>começa com você.</em></h1>
+        <p>Este é um espaço para refletir sobre sua participação, reconhecer avanços e indicar o que ainda precisa ser retomado.</p>
+        <div class="hero-note"><span class="note-icon">✦</span> Responda com sinceridade. Esta avaliação é uma oportunidade de melhorar.</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card"><span class="art-symbol">✎</span><strong>Refletir</strong><small>Aprender também é perceber o próprio caminho.</small></div>
+        <span class="art-dot dot-one"></span><span class="art-dot dot-two"></span><span class="art-star">✳</span>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="Navegação">
+      <button class="tab active" data-tab="student">Minha autoavaliação</button>
+      <button class="tab" data-tab="teacher">Área do professor</button>
+    </nav>
+
+    <section id="studentPanel" class="panel">
+      <div class="section-heading">
+        <div><span class="eyebrow">PARTE 1 · IDENTIFICAÇÃO</span><h2>Vamos começar?</h2></div>
+        <span class="step-count">01 <i>/ 04</i></span>
+      </div>
+      <form id="evaluationForm">
+        <div class="field-grid">
+          <label class="field">Turma <span class="required">*</span>
+            <input name="turma" required maxlength="40" placeholder="Ex.: 3º ano A">
+          </label>
+          <label class="field">Nome <span class="optional">(opcional)</span>
+            <input name="nome" maxlength="100" placeholder="Você pode responder anonimamente">
+          </label>
+        </div>
+
+        <div class="section-heading compact">
+          <div><span class="eyebrow">PARTE 2 · PARTICIPAÇÃO E COMPREENSÃO</span><h2>Como foi sua experiência?</h2></div>
+          <span class="step-count">02 <i>/ 04</i></span>
+        </div>
+        <div class="question-grid">
+          <fieldset class="question">
+            <legend>1. Como você avalia sua participação no Aulão?</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="participacao" value="Muito ativa" required><span>Muito ativa</span></label>
+              <label><input type="radio" name="participacao" value="Ativa"><span>Ativa</span></label>
+              <label><input type="radio" name="participacao" value="Parcial"><span>Parcial</span></label>
+              <label><input type="radio" name="participacao" value="Baixa"><span>Baixa</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="question">
+            <legend>2. Você conseguiu compreender os conteúdos trabalhados?</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="compreensao" value="Compreendi muito bem" required><span>Sim, muito bem</span></label>
+              <label><input type="radio" name="compreensao" value="Compreendi parcialmente"><span>Em parte</span></label>
+              <label><input type="radio" name="compreensao" value="Tive dificuldades"><span>Tive dificuldades</span></label>
+              <label><input type="radio" name="compreensao" value="Não compreendi"><span>Não compreendi</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="question">
+            <legend>3. Como você se sentiu ao resolver as questões propostas?</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="questoes" value="Seguro" required><span>Seguro(a)</span></label>
+              <label><input type="radio" name="questoes" value="Com algumas dúvidas"><span>Com dúvidas</span></label>
+              <label><input type="radio" name="questoes" value="Com muita dificuldade"><span>Com dificuldade</span></label>
+              <label><input type="radio" name="questoes" value="Não consegui resolver"><span>Não consegui</span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="section-heading compact">
+          <div><span class="eyebrow">PARTE 3 · AUTOAVALIAÇÃO POR ÁREA</span><h2>Como você se avalia?</h2><p class="helper">Escolha uma nota de 1 a 5 para cada área, considerando sua compreensão dos conteúdos.</p></div>
+          <span class="step-count">03 <i>/ 04</i></span>
+        </div>
+        <div class="rating-list">
+          <div class="rating-item"><div><strong>Inglês</strong><small>Vocabulário, leitura e interpretação</small></div><div class="rating" role="group" aria-label="Nota em Inglês" data-name="ingles"></div></div>
+          <div class="rating-item"><div><strong>Literatura e Arte</strong><small>Movimentos, obras e leitura artística</small></div><div class="rating" role="group" aria-label="Nota em Literatura e Arte" data-name="literaturaArte"></div></div>
+          <div class="rating-item"><div><strong>Gramática e Redação</strong><small>Análise linguística e produção textual</small></div><div class="rating" role="group" aria-label="Nota em Gramática e Redação" data-name="gramaticaRedacao"></div></div>
+          <div class="rating-item"><div><strong>Educação Física</strong><small>Conceitos e práticas corporais</small></div><div class="rating" role="group" aria-label="Nota em Educação Física" data-name="educacaoFisica"></div></div>
+        </div>
+        <div class="scale-legend"><span>1 · Preciso de bastante ajuda</span><span>5 · Compreendi muito bem</span></div>
+
+        <div class="section-heading compact">
+          <div><span class="eyebrow">PARTE 4 · REFLEXÃO E COMPROMISSO</span><h2>O que pode melhorar?</h2></div>
+          <span class="step-count">04 <i>/ 04</i></span>
+        </div>
+        <div class="field-grid">
+          <label class="field">4. Em qual área você sentiu maior dificuldade?
+            <select name="dificuldade" required>
+              <option value="">Selecione uma opção</option><option>Inglês</option><option>Literatura e Arte</option><option>Gramática e Redação</option><option>Educação Física</option><option>Em todas um pouco</option><option>Não senti dificuldade</option>
+            </select>
+          </label>
+          <label class="field">5. Qual estratégia mais ajudou você?
+            <select name="estrategia" required>
+              <option value="">Selecione uma opção</option><option>Clareza das explicações</option><option>Explicações do professor</option><option>Exemplos práticos</option><option>Interação e atividades em grupo</option><option>Resolução comentada de questões</option><option>Revisão dos conteúdos</option>
+            </select>
+          </label>
+        </div>
+        <label class="field full-field">6. O que foi mais importante que você aprendeu ou percebeu durante o Aulão?
+          <textarea name="aprendizado" rows="3" maxlength="700" placeholder="Escreva com suas palavras..."></textarea>
+        </label>
+        <label class="field full-field">7. O que ainda precisa ser retomado ou explicado?
+          <textarea name="retomar" rows="3" maxlength="700" placeholder="Conte quais conteúdos ou questões ainda geram dúvidas..."></textarea>
+        </label>
+        <label class="field full-field">8. Qual compromisso você assume para melhorar sua aprendizagem?
+          <textarea name="compromisso" rows="3" maxlength="500" placeholder="Ex.: revisar os conteúdos, participar mais, tirar dúvidas..."></textarea>
+        </label>
+        <div class="form-footer">
+          <p><span class="required">*</span> Campos obrigatórios. Suas respostas serão encaminhadas ao professor.</p>
+          <button class="primary-btn" type="submit">Enviar autoavaliação <span>→</span></button>
+        </div>
+        <div id="formMessage" class="message" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section id="teacherPanel" class="panel hidden">
+      <div class="section-heading">
+        <div><span class="eyebrow">ACESSO RESTRITO</span><h2>Painel do professor</h2><p class="helper">Consulte as respostas enviadas pelos estudantes.</p></div>
+        <span class="lock-mark">⌑</span>
+      </div>
+      <div id="loginBox" class="login-box">
+        <label class="field">Senha de acesso
+          <input id="teacherPassword" type="password" autocomplete="current-password" placeholder="Digite a senha do professor">
+        </label>
+        <button id="loginButton" class="primary-btn" type="button">Entrar no painel <span>→</span></button>
+        <div id="loginMessage" class="message" role="status"></div>
+      </div>
+      <div id="dashboard" class="hidden">
+        <div class="dashboard-head"><div><h3>Respostas recebidas</h3><p class="helper">As 1.000 respostas mais recentes.</p></div><button id="exportButton" class="secondary-btn">Exportar CSV ↓</button></div>
+        <div class="stats-grid"><article class="stat-card"><span>Total de respostas</span><strong id="totalCount">0</strong></article><article class="stat-card"><span>Turmas participantes</span><strong id="classCount">0</strong></article><article class="stat-card"><span>Média geral</span><strong id="averageScore">—</strong></article></div>
+        <div class="table-wrap"><table><thead><tr><th>Data</th><th>Turma</th><th>Estudante</th><th>Dificuldade</th><th>Participação</th></tr></thead><tbody id="responsesBody"></tbody></table></div>
+        <button id="logoutButton" class="text-btn">Sair do painel</button>
+      </div>
+    </section>
+    <footer><span>✦</span> Aprender é um processo. Reconhecer o caminho faz parte dele.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
