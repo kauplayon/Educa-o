@@ -47,11 +47,15 @@
       </div>
       <form id="evaluationForm">
         <div class="field-grid">
-          <label class="field">Turma <span class="required">*</span>
-            <input name="turma" required maxlength="40" placeholder="Ex.: 3º ano A">
+          <label class="field">Série / turma <span class="required">*</span>
+            <select name="turma" required>
+              <option value="">Selecione sua turma</option>
+              <option value="3A">3A</option>
+              <option value="3B">3B</option>
+            </select>
           </label>
-          <label class="field">Nome <span class="optional">(opcional)</span>
-            <input name="nome" maxlength="100" placeholder="Você pode responder anonimamente">
+          <label class="field">Nome completo <span class="required">*</span>
+            <input name="nome" required minlength="3" maxlength="100" autocomplete="name" placeholder="Digite seu nome completo">
           </label>
         </div>
 
